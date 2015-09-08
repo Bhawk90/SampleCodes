@@ -28,7 +28,12 @@
                     Content="Név módosítása"
                     Margin="10" HorizontalAlignment="Center"
                     Click="btnChangeName_Click"/>
-            
+
+            <Button x:Name="btnShowUsers"
+                    Content="Felhasználók kilistázása"
+                    Margin="10" HorizontalAlignment="Center"
+                    Click="btnShowUsers_Click"/>
+
         </StackPanel>
 
     </Grid>

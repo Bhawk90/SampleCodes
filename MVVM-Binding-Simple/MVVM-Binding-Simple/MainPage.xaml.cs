@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -32,6 +33,12 @@ namespace MVVM_Binding_Simple
         private void btnChangeName_Click(object sender, RoutedEventArgs e)
         {
             ViewModel.ChangeName(txtNewName.Text);
+        }
+
+        private void btnShowUsers_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(CollectionView));
+            
         }
     }
 }
