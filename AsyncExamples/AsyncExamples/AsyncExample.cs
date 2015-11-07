@@ -44,10 +44,8 @@ namespace AsyncExamples
         {
             // Since we are on a different Thread then the UI, we must use a Dispatcher to communicate with it.
             // Without using a Dispatcher to the UI Thread, we would receive a cross-thread violation.
-            outputControl.Dispatcher.BeginInvoke((Action)(() =>
-            {
-                outputControl.Text = txt;
-            }));
+            outputControl.Text = txt;
+            
         }
 
         public async Task ResourceIntensiveTask()
