@@ -1,0 +1,58 @@
+﻿<Window x:Class="AsyncExamples.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AsyncExamples"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        
+        <TextBlock x:Name="txtOutput"
+                   FontSize="18" Padding="25,10" TextAlignment="Center" TextWrapping="Wrap"
+                   VerticalAlignment="Center" HorizontalAlignment="Center"
+                   Grid.Row="0"
+                   Grid.ColumnSpan="3" />
+
+        <Button x:Name="btnBackgroundWorker"
+                Margin="10" Padding="10"
+                Click="btnBackgroundWorker_Click"
+                Grid.Row="1" Grid.Column="0">
+            <Button.Content>
+                <TextBlock Text="Run BackgroundWorker Example"
+                           TextAlignment="Center" TextWrapping="Wrap" />
+            </Button.Content>
+        </Button>
+
+        <Button x:Name="btnThread"
+                Margin="10" Padding="10"
+                Click="btnThread_Click"
+                Grid.Row="1" Grid.Column="1">
+            <Button.Content>
+                <TextBlock Text="Run Thread Example"
+                           TextAlignment="Center" TextWrapping="Wrap" />
+            </Button.Content>
+        </Button>
+
+        <Button x:Name="btnAsync"
+                Margin="10" Padding="10"
+                Click="btnAsync_Click"
+                Grid.Row="1" Grid.Column="2">
+            <Button.Content>
+                <TextBlock Text="Run Async/Await Example"
+                           TextAlignment="Center" TextWrapping="Wrap" />
+            </Button.Content>
+        </Button>
+
+    </Grid>
+</Window>
