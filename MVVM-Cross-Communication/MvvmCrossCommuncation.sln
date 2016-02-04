@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmCrossCommuncation", "MvvmCrossCommuncation\MvvmCrossCommuncation.csproj", "{63937A0A-F77B-4D14-8DE2-84A21DE22706}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmCrossCommuncation.Core", "MvvmCrossCommuncation.Core\MvvmCrossCommuncation.Core.csproj", "{33B6576E-FC65-43A3-BF6B-156FA37BFBA7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63937A0A-F77B-4D14-8DE2-84A21DE22706}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63937A0A-F77B-4D14-8DE2-84A21DE22706}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63937A0A-F77B-4D14-8DE2-84A21DE22706}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63937A0A-F77B-4D14-8DE2-84A21DE22706}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33B6576E-FC65-43A3-BF6B-156FA37BFBA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33B6576E-FC65-43A3-BF6B-156FA37BFBA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33B6576E-FC65-43A3-BF6B-156FA37BFBA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33B6576E-FC65-43A3-BF6B-156FA37BFBA7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
