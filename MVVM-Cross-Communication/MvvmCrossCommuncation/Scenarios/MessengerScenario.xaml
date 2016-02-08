@@ -1,0 +1,50 @@
+﻿<Page x:Class="MvvmCrossCommuncation.Scenarios.MessengerScenario"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MvvmCrossCommuncation.Scenarios"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Background="White"
+      Title="Messenger Scenario"
+      DataContext="{Binding MessengerScenarioViewModel, Source={StaticResource ViewModelLocator}}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="A példában az MVVM Light által megvalósított Messenger osztály kerül bemutatásra."
+                        Margin="0,0,0,10"
+                        TextWrapping="Wrap" />
+            <TextBlock Text="A Messenger osztályon tetszőleges csatornákra iratkozhatunk fel. Ezeken a csatornákon keresztül az alkalmazás bármely részéből küldhetünk üzenetet, melyet a regisztrált eseménykezelő feldolgoznak."
+                        Margin="0,0,0,10"
+                        TextWrapping="Wrap" />
+
+            <ToggleButton Content="Feliratkozás a csatornára"
+                          IsChecked="{Binding MessengerSubscribed, Mode=TwoWay}"
+                          HorizontalAlignment="Left"
+                          Margin="0,0,0,12" />
+        </StackPanel>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBox Text="{Binding MessageText, Mode=TwoWay}" />
+            <Button Content="Küldés"
+                    Command="{Binding SendMessageCommand}"
+                    Margin="7,0,0,0"
+                    Grid.Column="1"/>
+        </Grid>
+
+        <ListView ItemsSource="{Binding Messages}" Grid.Row="2" />
+        
+    </Grid>
+</Page>

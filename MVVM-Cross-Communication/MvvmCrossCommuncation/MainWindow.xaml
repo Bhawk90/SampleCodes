@@ -6,14 +6,34 @@
         xmlns:local="clr-namespace:MvvmCrossCommuncation"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525"
+        MinWidth="800" MinHeight="600"
         DataContext="{Binding ScenariosViewModel, Source={StaticResource ViewModelLocator}}">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <ListView x:Name="ScenariosCollection" ItemsSource="{Binding ScenarioCollection}">
+        <TextBlock Text="Példák"
+                   Margin="15"
+                   Style="{StaticResource HeaderTextBlockStyle}" />
+
+        <TextBlock x:Name="ScenarioTitle"
+                   Text="MVVM Light Toolkit - 2. rész - kódpéldák"
+                   Margin="15"
+                   Style="{StaticResource HeaderTextBlockStyle}"
+                   Grid.Column="1" />
+
+        <ListView x:Name="ScenariosCollection"
+                  Margin="15"
+                  ItemsSource="{Binding ScenarioCollection}"
+                  SelectionChanged="ScenariosCollection_SelectionChanged"
+                  Grid.Row="1">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Title}" />
@@ -21,6 +41,9 @@
             </ListView.ItemTemplate>
         </ListView>
         
-        <Frame x:Name="ScenarioFrame" Grid.Column="1" />
+        <Frame x:Name="ScenarioFrame"
+               NavigationUIVisibility="Hidden"
+               Margin="15"
+               Grid.Row="1" Grid.Column="1" />
     </Grid>
 </Window>
