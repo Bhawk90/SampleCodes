@@ -1,4 +1,5 @@
-﻿using GalaSoft.MvvmLight.Ioc;
+﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,14 @@ namespace MvvmCrossCommuncation.Core.ViewModels
             SimpleIoc.Default.Register<CrossCommunicationViewModel>();
             SimpleIoc.Default.Register<ScenariosViewModel>();
             SimpleIoc.Default.Register<MessengerScenarioViewModel>();
+
+            if (ViewModelBase.IsInDesignModeStatic)
+            {
+                var ViewModel = new ViewModelLocator().MessengerScenarioViewModel;
+                ViewModel.Messages.Add("See you in Blend or Visual Studio!");
+                ViewModel.Messages.Add("We have added this from code-behind.");
+                ViewModel.Messages.Add("This is a test message");
+            }
         }
 
         #endregion
