@@ -25,9 +25,15 @@ namespace MvvmCrossCommuncation.Core.ViewModels
 
         #region Public Members
 
-        public CrossCommunicationViewModel CrossCommunicationViewModel { get { return SimpleIoc.Default.GetInstance<CrossCommunicationViewModel>(); } }
-        public ScenariosViewModel ScenariosViewModel { get { return SimpleIoc.Default.GetInstance<ScenariosViewModel>(); } }
-        public MessengerScenarioViewModel MessengerScenarioViewModel { get { return SimpleIoc.Default.GetInstance<MessengerScenarioViewModel>(); } }
+        public CrossCommunicationViewModel CrossCommunicationViewModel { get { return CurrentServiceLocator.GetInstance<CrossCommunicationViewModel>(); } }
+        public ScenariosViewModel ScenariosViewModel { get { return CurrentServiceLocator.GetInstance<ScenariosViewModel>(); } }
+        public MessengerScenarioViewModel MessengerScenarioViewModel { get { return CurrentServiceLocator.GetInstance<MessengerScenarioViewModel>(); } }
+
+        #endregion
+
+        #region Private Members
+
+        private SimpleIoc CurrentServiceLocator { get { return ServiceLocator.Current as SimpleIoc; } }
 
         #endregion
     }
